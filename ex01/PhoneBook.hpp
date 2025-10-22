@@ -9,6 +9,7 @@ private:
 	int		count;
 
 public:
+	PhoneBook();
 	void	addContact(Contact new_contact);
 	void	searchContacts();
 };
