@@ -1,4 +1,5 @@
 #include <iostream>
+#include <cstdlib>
 #include "PhoneBook.hpp"
 
 std::string	getValidInput(std::string prompt)
@@ -8,7 +9,12 @@ std::string	getValidInput(std::string prompt)
 	while (true)
 	{
 		std::cout << prompt;
-		std::getline(std::cin, input);
+		if (!(std::getline(std::cin, input)))
+		{
+			if (std::cin.eof())
+				std::cout << "\nEOF detected. Goodbye!" << std::endl;
+			std::exit(0);
+		}
 		if (!input.empty())
 			return (input);
 	}
@@ -31,8 +37,12 @@ int main()
 	while (true)
 	{
 		std::cout << "Enter command (ADD, SEARCH, EXIT): ";
-		std::cin >> command;
-
+		if (!(std::cin >> command))
+		{
+			if (std::cin.eof())
+				std::cout << "\nEOF detected. Goodbye!" << std::endl;
+			std::exit(0);
+		}
 		if (command == "ADD")
 		{
 			Contact	contact;

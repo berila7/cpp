@@ -1,3 +1,6 @@
+#ifndef PHONEBOOK_HPP
+#define PHONEBOOK_HPP
+
 #include "Contact.hpp"
 #include <iostream>
 
@@ -5,7 +8,7 @@ class PhoneBook
 {
 private:
 	Contact	contacts[8];
-	int		nex_index;
+	int		next_index;
 	int		count;
 
 public:
@@ -13,3 +16,5 @@ public:
 	void	addContact(Contact new_contact);
 	void	searchContacts();
 };
+
+#endif

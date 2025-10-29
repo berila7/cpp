@@ -1,13 +1,13 @@
 CXX			=	c++
 CXXFLAGS	=	-Wall -Wextra -Werror -std=c++98
 
-SRC			=	megaphone.cpp
+SRC			=	Account.cpp tests.cpp
 OBJ			=	$(SRC:.cpp=.o)
-NAME		=	megaphone
+NAME		=	bank
 
 all: $(NAME)
 
-$(NAME): $(OBJ) Contact.hpp PhoneBook.hpp
+$(NAME): $(OBJ)
 	$(CXX) $(CXXFLAGS) $(OBJ) -o $(NAME)
 
 clean:
@@ -17,3 +17,5 @@ fclean: clean
 	rm -f $(NAME)
 
 re: fclean all
+
+.PHONY: all clean fclean re

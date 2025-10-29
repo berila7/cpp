@@ -1,10 +1,11 @@
 #include <iostream>
 #include <iomanip>
+#include <cstdlib>
 #include "PhoneBook.hpp"
 
 PhoneBook::PhoneBook()
 {
-	nex_index = 0;
+	next_index = 0;
 	count = 0;
 }
 
@@ -17,8 +18,8 @@ std::string	formatField(std::string str)
 
 void	PhoneBook::addContact(Contact new_contact)
 {
-	contacts[nex_index] = new_contact;
-	nex_index = (nex_index + 1) % 8;
+	contacts[next_index] = new_contact;
+	next_index = (next_index + 1) % 8;
 	if (count < 8)
 		count++;
 }
@@ -50,6 +51,11 @@ void	PhoneBook::searchContacts()
 		std::cin.clear();
 		std::cin.ignore(1000, '\n');
 		std::cout << "Invalid input!" << std::endl;
+		if (std::cin.eof())
+		{
+			std::cout << "\nEOF detected. Goodbye!" << std::endl;
+			std::exit(0);
+		}
 		return ;
 	}
 	if (index >= 0 && index <= count -1)
