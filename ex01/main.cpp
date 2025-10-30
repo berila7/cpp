@@ -2,29 +2,34 @@
 #include <cstdlib>
 #include "PhoneBook.hpp"
 
-bool	is_spaces(std::string str)
+bool	is_valid(std::string str)
 {
-	int	i = 0;
+	int i = 0;
 	while (str[i])
 	{
-		if (str[i] != ' ')
-			return (false);
+		if (isalnum(str[i]))
+			return (true);
 		i++;
 	}
-	return (true);
+	return (false);
 }
 
 bool	valid_string(std::string str)
 {
 	int	i = 0;
+	int	valid = 1;
 
 	while (str[i])
 	{
-		if (!isalnum(str[i]))
-			return (false);
-		i++;
+		if (isalnum(str[i]) || str[i] == ' ')
+			i++;
+		else
+		{
+			valid = 0;
+			break ;
+		}
 	}
-	if (is_spaces(str))
+	if (!valid)
 		return (false);
 	return (true);
 }
@@ -42,7 +47,7 @@ std::string	getValidInput(std::string prompt)
 				std::cout << "\nEOF detected. Goodbye!" << std::endl;
 			std::exit(0);
 		}
-		if (!input.empty() && valid_string(input))
+		if (!input.empty() && valid_string(input) && is_valid(input))
 			return (input);
 	}
 }
