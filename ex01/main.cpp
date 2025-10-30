@@ -20,10 +20,12 @@ bool	valid_string(std::string str)
 
 	while (str[i])
 	{
-		if (!isalnum(str[i]) || is_spaces(str))
+		if (!isalnum(str[i]))
 			return (false);
 		i++;
 	}
+	if (is_spaces(str))
+		return (false);
 	return (true);
 }
 
