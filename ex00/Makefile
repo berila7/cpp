@@ -7,7 +7,7 @@ NAME		=	megaphone
 
 all: $(NAME)
 
-$(NAME): $(OBJ) Contact.hpp PhoneBook.hpp
+$(NAME): $(OBJ)
 	$(CXX) $(CXXFLAGS) $(OBJ) -o $(NAME)
 
 clean:

@@ -2,6 +2,31 @@
 #include <cstdlib>
 #include "PhoneBook.hpp"
 
+bool	is_spaces(std::string str)
+{
+	int	i = 0;
+	while (str[i])
+	{
+		if (str[i] != ' ')
+			return (false);
+		i++;
+	}
+	return (true);
+}
+
+bool	valid_string(std::string str)
+{
+	int	i = 0;
+
+	while (str[i])
+	{
+		if (!isalnum(str[i]) || is_spaces(str))
+			return (false);
+		i++;
+	}
+	return (true);
+}
+
 std::string	getValidInput(std::string prompt)
 {
 	std::string	input;
@@ -15,7 +40,7 @@ std::string	getValidInput(std::string prompt)
 				std::cout << "\nEOF detected. Goodbye!" << std::endl;
 			std::exit(0);
 		}
-		if (!input.empty())
+		if (!input.empty() && valid_string(input))
 			return (input);
 	}
 }
@@ -37,7 +62,7 @@ int main()
 	while (true)
 	{
 		std::cout << "Enter command (ADD, SEARCH, EXIT): ";
-		if (!(std::cin >> command))
+		if (!(std::getline(std::cin, command)))
 		{
 			if (std::cin.eof())
 				std::cout << "\nEOF detected. Goodbye!" << std::endl;
@@ -46,7 +71,6 @@ int main()
 		if (command == "ADD")
 		{
 			Contact	contact;
-			std::cin.ignore(1000, '\n');
 			addCommand(contact);
 			phonebook.addContact(contact);
 		}

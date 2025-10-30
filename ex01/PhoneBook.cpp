@@ -1,6 +1,7 @@
 #include <iostream>
 #include <iomanip>
 #include <cstdlib>
+#include <sstream>
 #include "PhoneBook.hpp"
 
 PhoneBook::PhoneBook()
@@ -26,6 +27,7 @@ void	PhoneBook::addContact(Contact new_contact)
 
 void	PhoneBook::searchContacts()
 {
+	std::string	commad;
 	int	index;
 
 	if (count == 0)
@@ -46,11 +48,8 @@ void	PhoneBook::searchContacts()
 		std::cout << std::setw(10) << formatField(contacts[i].getNickname()) << std::endl;
 	}
 	std::cout << "Enter contact index: ";
-	if (!(std::cin >> index))
+	if (!(std::getline(std::cin, commad)))
 	{
-		std::cin.clear();
-		std::cin.ignore(1000, '\n');
-		std::cout << "Invalid input!" << std::endl;
 		if (std::cin.eof())
 		{
 			std::cout << "\nEOF detected. Goodbye!" << std::endl;
@@ -58,6 +57,14 @@ void	PhoneBook::searchContacts()
 		}
 		return ;
 	}
+	std::istringstream iss(commad);
+	iss >> index;
+	if (iss.fail() || !iss.eof())
+	{
+    	std::cout << "Invalid input!" << std::endl;
+    	return;
+	}
+
 	if (index >= 0 && index <= count -1)
 	{
 		std::cout << "First name: " << contacts[index].getFirstName() << std::endl;
@@ -68,6 +75,5 @@ void	PhoneBook::searchContacts()
 	}
 	else
 		std::cout << "Invalid index!" << std::endl;
-	std::cin.ignore(1000, '\n');
 	return ;
 }
