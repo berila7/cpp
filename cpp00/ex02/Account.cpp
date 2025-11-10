@@ -132,4 +132,3 @@ Account::~Account()
 	std::cout << "amount:" << _amount << ";";
 	std::cout << "closed" << std::endl; 
 }
-
