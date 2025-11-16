@@ -1,10 +1,10 @@
+NAME		=	zombieHord
 CXX			=	c++
-CXXFLAGS	=	-Wall -Wextra -Werror
+CXXFLAGS	=	-Wall -Wextra -Werror -std=c++98
 
-SRC			=	Contact.cpp PhoneBook.cpp main.cpp
-OBJ			=	$(SRC:.cpp=.o)
-NAME		=	phonebook
-INC			=	PhoneBook.hpp Contact.hpp
+SRC			=	Zombie.cpp main.cpp zombieHorde.cpp
+INC			=	Zombie.hpp Zombie.h
+OBJ			=	${SRC:.cpp=.o}
 
 all: $(NAME)
 
@@ -14,7 +14,7 @@ $(NAME): $(OBJ)
 %.o: %.cpp $(INC)
 	$(CXX) $(CXXFLAGS) -c $< -o $@
 
-clean:
+clean:	
 	rm -f $(OBJ)
 
 fclean: clean
