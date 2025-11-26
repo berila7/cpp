@@ -1,20 +1,7 @@
 #include <iostream>
 #include "Zombie.hpp"
 
-void	Zombie::setZombieName(std::string zombieName)
-{
-	name = zombieName;
-}
-
-Zombie::Zombie()
-{
-	
-}
-
-std::string	Zombie::getZombieName( void )
-{
-	return (name);
-}
+Zombie::Zombie( std::string value ) : name(value) {}
 
 void	Zombie::announce( void )
 {
@@ -24,6 +11,5 @@ void	Zombie::announce( void )
 
 Zombie::~Zombie()
 {
-	std::cout << "The zombie "; 
-	std::cout << name << " is destroyed" << std::endl;
+	std::cout << name << ": destroyed" << std::endl;
 }

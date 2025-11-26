@@ -1,18 +1,14 @@
-NAME		=	zombie
+NAME		=	ref
 CXX			=	c++
 CXXFLAGS	=	-Wall -Wextra -Werror -std=c++98
 
-SRC			=	Zombie.cpp main.cpp newZombie.cpp randomChump.cpp
-INC			=	Zombie.hpp
+SRC			=	main.cpp
 OBJ			=	${SRC:.cpp=.o}
 
 all: $(NAME)
 
 $(NAME): $(OBJ)
 	$(CXX) $(CXXFLAGS) $(OBJ) -o $(NAME)
-
-%.o: %.cpp $(INC)
-	$(CXX) $(CXXFLAGS) -c $< -o $@
 
 clean:	
 	rm -f $(OBJ)

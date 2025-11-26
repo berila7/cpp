@@ -3,7 +3,7 @@ CXX			=	c++
 CXXFLAGS	=	-Wall -Wextra -Werror -std=c++98
 
 SRC			=	Zombie.cpp main.cpp zombieHorde.cpp
-INC			=	Zombie.hpp Zombie.h
+INC			=	Zombie.hpp
 OBJ			=	${SRC:.cpp=.o}
 
 all: $(NAME)

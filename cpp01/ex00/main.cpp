@@ -3,10 +3,10 @@
 
 int main( void )
 {
-	Zombie *myZombie = newZombie("real zombie");
+	Zombie *myZombie = newZombie("hmd");
 	myZombie->announce();
 
-	randomChump("Chump zombie");
+	randomChump("rayan");
 	
 	delete myZombie;
 

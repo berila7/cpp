@@ -1,10 +1,10 @@
-NAME		=	zombie
+NAME		=	weapon
 CXX			=	c++
 CXXFLAGS	=	-Wall -Wextra -Werror -std=c++98
 
-SRC			=	Zombie.cpp main.cpp newZombie.cpp randomChump.cpp
-INC			=	Zombie.hpp
+SRC			=	main.cpp Weapon.cpp HumanA.cpp HumanB.cpp
 OBJ			=	${SRC:.cpp=.o}
+INC			=	 Weapon.hpp HumanA.hpp HumanB.hpp
 
 all: $(NAME)
 
@@ -14,7 +14,7 @@ $(NAME): $(OBJ)
 %.o: %.cpp $(INC)
 	$(CXX) $(CXXFLAGS) -c $< -o $@
 
-clean:	
+clean:
 	rm -f $(OBJ)
 
 fclean: clean
