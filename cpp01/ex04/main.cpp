@@ -1,61 +1,63 @@
 #include <iostream>
 #include <fstream>
 #include <cstdlib>
+#include <sstream>
 
-void	search_replace(const std::string& file, const std::string& s1, const std::string& s2)
+int	read_file(const std::string& file, std::string& result)
 {
-	std::ifstream infile;
-	std::ofstream outfile;
-	(void)s1;
-	(void)s2;
+	std::ifstream		infile;
+	std::stringstream	buffer;
 
 	infile.open(file.c_str());
 	if (!infile.is_open())
 	{
 		std::cerr << "Error: opening file" << std::endl;
-		std::exit(1);
+		return (1);
 	}
+	buffer << infile.rdbuf();
+	result = buffer.str();
+	infile.close();
+	return (0);
+}
 
-	std::string outname = file + ".replace";
+int	search_replace(const std::string& file, const std::string& s1, const std::string& s2)
+{
+	std::ofstream	outfile;
+	size_t			pos = 0;
+	size_t			found;
+	std::string		result = "";
+	std::string		outname = file + ".replace";
+
+	if (s1.empty())
+	{
+		std::cerr << "Error: s1 cannot be empty" << std::endl;
+		return (1);
+	}
+	if (read_file(file, result))
+		return (1);
 	outfile.open(outname.c_str());
-
 	if(!outfile.is_open())
 	{
 		std::cerr << "Error: creating output file" << std::endl;
-		std::exit(1);
+		return (1);
 	}
-	std::string line;
-
-	while (std::getline(infile, line))
+	while ((found = result.find(s1, pos)) != std::string::npos)
 	{
-		std::string result = "";
-		size_t pos = 0;
-
-		size_t found = line.find(s1, pos);
-		if (found != std::string::npos)
-		{
-			result += s2;
-			pos = found + s1.length();
-			outfile << result << std::endl;
-			std::cout << pos << std::endl;
-		}
-		else
-		{
-			outfile << line << std::endl;
-			pos += line.length();
-		}
+		outfile << result.substr(pos, found - pos);
+		outfile << s2;
+		pos = found + s1.length();
 	}
-	infile.close();
+	outfile << result.substr(pos);
 	outfile.close();
+	return (0);
 }
 
 int main(int ac, char *av[])
 {
-	(void)ac;
-	(void)av;
 	if (ac == 4)
 	{
-		search_replace(av[1], av[2], av[3]);
+		if (search_replace(av[1], av[2], av[3]))
+			return (EXIT_FAILURE);
 	}
 	else
 	{
