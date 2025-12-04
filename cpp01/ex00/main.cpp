@@ -9,5 +9,4 @@ int main( void )
 	randomChump("rayan");
 	
 	delete myZombie;
-
 }

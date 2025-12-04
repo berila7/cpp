@@ -3,9 +3,9 @@
 
 int main( void )
 {
-	Zombie* myHorde = zombieHorde(5, "hmd");
+	Zombie* myHorde = zombieHorde(3, "hmd");
 
-	for (int i = 0; i < 5; i++)
+	for (int i = 0; i < 3; i++)
 	{
 		myHorde[i].announce();
 	}
