@@ -6,12 +6,13 @@ Fixed::Fixed()
 	std::cout << "Default constructor called" << std::endl;
 }
 
-Fixed( int const num )
+Fixed::Fixed( int const num )
 {
-
+	_value = num * (1 << _fractionalBits);
+	std::cout << "Int constructor called" << std::endl;
 }
 
-Fixed( float const num )
+Fixed::Fixed( float const num )
 {
 
 }

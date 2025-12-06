@@ -2,6 +2,7 @@
 #define FIXED_HPP
 
 #include <iostream>
+#include <cmath>
 
 class Fixed
 {
@@ -22,5 +23,7 @@ public:
 	int		toInt( void ) const;
 
 };
+
+std::ostream& operator<<(std::ostream& os, const Fixed& fixed);
 
 #endif
