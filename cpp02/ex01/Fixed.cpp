@@ -24,15 +24,16 @@ Fixed::Fixed( const Fixed& src )
 	std::cout << "Copy constructor called" << std::endl;
 }
 
-Fixed& Fixed::operator=(const Fixed& src )
+// Assignment operator:
+Fixed&	Fixed::operator=(const Fixed& other )
 {
-	if (this !=  &src)
+	if (this !=  &other)
 	{
-		_value = src._value;
+		_value = other._value;
 		std::cout << "Copy assignment operator called" << std::endl;
 	}
 	return (*this);
-} 
+}
 
 Fixed::~Fixed()
 {

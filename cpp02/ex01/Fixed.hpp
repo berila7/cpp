@@ -16,7 +16,9 @@ public:
 	Fixed( const Fixed& obj );
 	~Fixed();
 	
-	Fixed&	operator=( const Fixed& src);
+	Fixed&	operator=( const Fixed& other );
+
+
 	int		getRawBits( void ) const;
 	void	setRawBits( int const raw );
 	float	toFloat( void ) const;
