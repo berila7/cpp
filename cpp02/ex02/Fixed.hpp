@@ -18,10 +18,10 @@ public:
 	
 	Fixed&	operator=( const Fixed& src);
 	// Arithmetic operators:
-	Fixed	operator+( const Fixed& other );
-	Fixed	operator-( const Fixed& other );
-	Fixed	operator*( const Fixed& other );
-	Fixed	operator/( const Fixed& other );
+	Fixed	operator+( const Fixed& other ) const;
+	Fixed	operator-( const Fixed& other ) const;
+	Fixed	operator*( const Fixed& other ) const;
+	Fixed	operator/( const Fixed& other ) const;
 	// Comparison operators:
 	bool	operator>( const Fixed& other ) const;
 	bool	operator<( const Fixed& other ) const;

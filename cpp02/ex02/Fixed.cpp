@@ -1,5 +1,4 @@
 #include "Fixed.hpp"
-#include <cmath>
 
 Fixed::Fixed()
 {
@@ -25,6 +24,11 @@ Fixed::Fixed( const Fixed& src )
 	std::cout << "Copy constructor called" << std::endl;
 }
 
+Fixed::~Fixed()
+{
+	std::cout << "Destructor called" << std::endl;
+}
+
 // Assignment operator:
 Fixed& Fixed::operator=(const Fixed& src )
 {
@@ -37,79 +41,55 @@ Fixed& Fixed::operator=(const Fixed& src )
 }
 
 // Arithmetic operator:
-Fixed	Fixed::operator+(const Fixed& other )
+Fixed	Fixed::operator+(const Fixed& other ) const
 {
-	Fixed	result;
-	result._value = this->_value + other._value;
-	return (result);
+	return (Fixed(this->toFloat() + other.toFloat()));
 }
 
-Fixed	Fixed::operator-(const Fixed& other )
+Fixed	Fixed::operator-(const Fixed& other ) const
 {
-	Fixed	result;
-	result._value = this->_value - other._value;
-	return (result);
+	return (Fixed(this->toFloat() - other.toFloat()));
 }
 
-Fixed	Fixed::operator*(const Fixed& other )
+Fixed	Fixed::operator*(const Fixed& other ) const
 {
-	float	first = this->toFloat();
-	float	second = other.toFloat();
-	float	multi = first * second;
-	Fixed	result = multi;
-	return (result);
+	return (Fixed(this->toFloat() * other.toFloat()));
 }
 
-Fixed	Fixed::operator/(const Fixed& other )
+Fixed	Fixed::operator/(const Fixed& other ) const
 {
-	float	first = this->toFloat();
-	float	second = other.toFloat();
-	float	divi = first / second;
-	Fixed	result = divi;
-	return (result);
+	return (Fixed(this->toFloat() / other.toFloat()));
 }
 
 // Comparison operators:
 bool	Fixed::operator>( const Fixed& other ) const
 {
-	if (this->_value > other._value)
-		return (true);
-	return (false);
+	return (this->_value > other._value);
 }
 
 bool	Fixed::operator<( const Fixed& other ) const
 {
-	if (this->_value < other._value)
-		return (true);
-	return (false);
+	return (this->_value < other._value);
 }
 
 bool	Fixed::operator>=( const Fixed& other ) const
 {
-	if (this->_value >= other._value)
-		return (true);
-	return (false);
+	return (this->_value >= other._value);
 }
 
 bool	Fixed::operator<=( const Fixed& other ) const
 {
-	if (this->_value <= other._value)
-		return (true);
-	return (false);
+	return (this->_value <= other._value);
 }
 
 bool	Fixed::operator==( const Fixed& other ) const
 {
-	if (this->_value == other._value)
-		return (true);
-	return (false);
+	return (this->_value == other._value);
 }
 
 bool	Fixed::operator!=( const Fixed& other ) const
 {
-	if (this->_value != other._value)
-		return (true);
-	return (false);
+	return (this->_value != other._value);
 }
 
 // Ancrement/Decrement operators:
@@ -166,11 +146,6 @@ const Fixed&	Fixed::max(const Fixed& src, const Fixed& other)
 	if (src > other)
 		return (src);
 	return (other);
-}
-
-Fixed::~Fixed()
-{
-	std::cout << "Destructor called" << std::endl;
 }
 
 float	Fixed::toFloat( void ) const
