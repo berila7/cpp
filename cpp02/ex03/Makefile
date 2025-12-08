@@ -2,8 +2,8 @@ NAME		=	fixed
 CXX			=	c++
 CXXFLAGS	=	-Wall -Wextra -Werror -std=c++98
 
-SRC			=	Fixed.cpp main.cpp
-INC			=	Fixed.hpp
+SRC			=	Fixed.cpp main.cpp Point.cpp bsp.cpp
+INC			=	Fixed.hpp Point.hpp
 OBJ			=	${SRC:.cpp=.o}
 
 all: $(NAME)
