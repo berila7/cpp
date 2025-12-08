@@ -1,4 +1,4 @@
-.o
+*.o
 phonebook
 megaphone
 learn.cpp
