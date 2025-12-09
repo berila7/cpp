@@ -1,28 +1,29 @@
 #include "Fixed.hpp"
 #include <cmath>
+#include <iostream>
 
 Fixed::Fixed()
 {
-	_value = 0;
 	std::cout << "Default constructor called" << std::endl;
+	_value = 0;
 }
 
 Fixed::Fixed( int const num )
 {
-	_value = num * (1 << _fractionalBits);
 	std::cout << "Int constructor called" << std::endl;
+	_value = num * (1 << _fractionalBits);
 }
 
 Fixed::Fixed( float const num )
 {
-	_value = roundf(num * (1 << _fractionalBits));
 	std::cout << "Float constructor called" << std::endl;
+	_value = roundf(num * (1 << _fractionalBits));
 }
 
 Fixed::Fixed( const Fixed& src )
 {
-	_value = src._value;
 	std::cout << "Copy constructor called" << std::endl;
+	_value = src._value;
 }
 
 Fixed::~Fixed()
@@ -33,10 +34,10 @@ Fixed::~Fixed()
 // Assignment operator:
 Fixed& Fixed::operator=(const Fixed& src )
 {
+	std::cout << "Copy assignment operator called" << std::endl;
 	if (this !=  &src)
 	{
 		_value = src._value;
-		std::cout << "Copy assignment operator called" << std::endl;
 	}
 	return (*this);
 }

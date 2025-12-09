@@ -1,5 +1,5 @@
-#include <iostream>
 #include "Point.hpp"
+#include <iostream>
 
 int main(void)
 {
@@ -10,8 +10,8 @@ int main(void)
     Point c(10.0f, 20.0f);
 
     // 2. Define Test Points
-    Point inside(10.0f, 5.0f);   // Strictly inside
-    Point outside(30.0f, 30.0f); // Way outside
+    Point inside(10.0f, 5.0f);   // inside
+    Point outside(30.0f, 30.0f); // outside
     Point vertex(0.0f, 0.0f);    // Exactly on a vertex (A)
     Point edge(10.0f, 0.0f);     // Exactly on an edge (between A and B)
 
