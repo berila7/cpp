@@ -3,22 +3,22 @@
 
 Fixed::Fixed()
 {
-	_value = 0;
 	std::cout << "Default constructor called" << std::endl;
+	_value = 0;
 }
 
 Fixed::Fixed( const Fixed& src )
 {
-	_value = src._value;
 	std::cout << "Copy constructor called" << std::endl;
+	_value = src._value;
 }
 
 Fixed& Fixed::operator=(const Fixed& src )
 {
+	std::cout << "Copy assignment operator called" << std::endl;
 	if (this !=  &src)
 	{
 		_value = src._value;
-		std::cout << "Copy assignment operator called" << std::endl;
 	}
 	return (*this);
 } 
