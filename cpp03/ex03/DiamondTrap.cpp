@@ -5,9 +5,9 @@
 #include <iostream>
 
 DiamondTrap::DiamondTrap( void )
-	:	ClapTrap("android"),
-		ScavTrap("android"),
-		FragTrap("android")
+	:	ClapTrap("one"),
+		ScavTrap(),
+		FragTrap()
 {
 	_hitPoint = 100;
 	_energyPoint = 50;
@@ -20,8 +20,8 @@ DiamondTrap::DiamondTrap( void )
 
 DiamondTrap::DiamondTrap( std::string value )
 	:	ClapTrap(value + "_clap_name"),
-		ScavTrap(value),
-		FragTrap(value)
+		ScavTrap(),
+		FragTrap()
 {
 	_name = value;
 	_hitPoint = 100;
@@ -35,8 +35,8 @@ DiamondTrap::DiamondTrap( std::string value )
 
 DiamondTrap::DiamondTrap( DiamondTrap const &other )
 	:	ClapTrap(other),
-		ScavTrap(other),
-		FragTrap(other)
+		ScavTrap(),
+		FragTrap()
 {
 	_name = other._name;
 	std::cout << "copy of DiamondTrap ";
