@@ -34,6 +34,17 @@ ClapTrap::ClapTrap(std::string value)
 	std::cout << std::endl;
 }
 
+ClapTrap::ClapTrap( std::string name, unsigned int hitP, unsigned int energyP, unsigned int attackD)
+	:	_name(name),
+		_hitPoint(hitP),
+		_energyPoint(energyP),
+		_attackDamage(attackD)
+{
+	std::cout << "ClapTrap ";
+	std::cout << _name << " created";
+	std::cout << std::endl;
+}
+
 ClapTrap&	ClapTrap::operator=(const ClapTrap& other)
 {
 	if (this != &other)

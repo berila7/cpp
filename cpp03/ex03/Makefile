@@ -1,9 +1,9 @@
-NAME		=	claptrap
+NAME		=	diamondtrap
 CXX			=	c++
 CXXFLAGS	=	-Wall -Wextra -Werror -std=c++98
 
-SRC			=	ClapTrap.cpp main.cpp
-INC			=	ClapTrap.hpp
+SRC			=	ClapTrap.cpp ScavTrap.cpp main.cpp FragTrap.cpp DiamondTrap.cpp
+INC			=	ClapTrap.hpp ScavTrap.hpp FragTrap.hpp DiamondTrap.hpp
 OBJ			=	${SRC:.cpp=.o}
 
 all: $(NAME)
