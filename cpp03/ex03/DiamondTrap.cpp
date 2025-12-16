@@ -2,7 +2,6 @@
 #include "ClapTrap.hpp"
 #include "FragTrap.hpp"
 #include "ScavTrap.hpp"
-#include <filesystem>
 #include <iostream>
 
 DiamondTrap::DiamondTrap( void )
