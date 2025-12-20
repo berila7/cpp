@@ -2,7 +2,7 @@
 
 int main()
 {
-    DiamondTrap diamond("moha");
+    DiamondTrap diamond;
     diamond.attack("enemy");
     diamond.takeDamage(30);
     diamond.beRepaired(20);

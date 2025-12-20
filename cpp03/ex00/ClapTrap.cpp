@@ -12,7 +12,7 @@ ClapTrap::ClapTrap( void )
 	std::cout << std::endl;
 }
 
-ClapTrap::ClapTrap(const ClapTrap& other)
+ClapTrap::ClapTrap( const ClapTrap& other )
 	:	_name(other._name),
 		_hitPoint(other._hitPoint),
 		_energyPoint(other._energyPoint),
@@ -23,7 +23,7 @@ ClapTrap::ClapTrap(const ClapTrap& other)
 	std::cout << std::endl;
 }
 
-ClapTrap::ClapTrap(std::string value) 
+ClapTrap::ClapTrap( std::string value ) 
 	:	_name(value),
 		_hitPoint(10),
 		_energyPoint(10),
@@ -34,7 +34,7 @@ ClapTrap::ClapTrap(std::string value)
 	std::cout << std::endl;
 }
 
-ClapTrap&	ClapTrap::operator=(const ClapTrap& other)
+ClapTrap&	ClapTrap::operator=( const ClapTrap& other )
 {
 	if (this != &other)
 	{
