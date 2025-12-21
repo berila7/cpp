@@ -2,12 +2,16 @@
 #include "Animal.hpp"
 #include <iostream>
 
-Cat::Cat( void ) :	Animal("Cat") {}
+Cat::Cat( void ) :	Animal("Cat") 
+{
+	_catBrain = new Brain();
+}
 
 Cat::Cat( Cat const &other ) : Animal(other) {}
 
 Cat::~Cat(void)
 {
+	delete _catBrain;
 	std::cout << "Animal sound" << std::endl;
 }
 

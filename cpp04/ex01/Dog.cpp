@@ -2,12 +2,14 @@
 #include "Animal.hpp"
 #include <iostream>
 
-Dog::Dog( void ) :	Animal("Dog") {}
-
-Dog::Dog( Dog const &other ) :	Animal(other) {}
+Dog::Dog( void ) :	Animal("Dog")
+{
+	_dogBrain = new Brain();
+}
 
 Dog::~Dog( void )
 {
+	delete _dogBrain;
 	std::cout << "Dog destructed" << std::endl;
 }
 
