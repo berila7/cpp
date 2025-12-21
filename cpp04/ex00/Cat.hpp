@@ -12,9 +12,9 @@ public:
 	Cat( void );
 	Cat( Cat const &other );
 	Cat &operator=( Cat const &other );
-	~Cat(void);
+	virtual ~Cat(void);
 
-	void	makeSound( void ) const;
+	virtual void	makeSound( void ) const;
 };
 
 #endif

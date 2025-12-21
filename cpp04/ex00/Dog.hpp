@@ -12,9 +12,9 @@ public:
 	Dog( void );
 	Dog( Dog const &other );
 	Dog &operator=( Dog const &other );
-	~Dog( void );
+	virtual ~Dog( void );
 
-	void	makeSound( void ) const;
+	virtual void	makeSound( void ) const;
 };
 
 #endif
