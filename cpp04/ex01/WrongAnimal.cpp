@@ -3,6 +3,8 @@
 
 WrongAnimal::WrongAnimal( void ) :	type("animal") {}
 
+WrongAnimal::WrongAnimal( std::string value ) :	type(value) {}
+
 WrongAnimal::WrongAnimal( WrongAnimal const &other ) :	type(other.type) {}
 
 WrongAnimal::~WrongAnimal( void )

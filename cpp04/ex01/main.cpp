@@ -1,17 +1,16 @@
-#include <iostream>
 #include "Animal.hpp"
 #include "Dog.hpp"
 #include "Cat.hpp"
 
 int main()
 {
-	const Animal animals[100];
+	Animal* animals[100];
 	for (size_t i = 0; i <= 100; i++)
 	{
-		if (i < 50)
-			animals[i] = Dog();
+		if (i <= 50)
+			animals[i] = new Dog();
 		else
-			animals[i] = Cat();
+			animals[i] = new Cat();
 	}
 	return 0;
 }

@@ -1,20 +1,23 @@
 #include "Brain.hpp"
+#include <iostream>
 
 Brain::Brain(void)
 {
-    for (size_t i, i = 0, i <= 100)
+    for (size_t i = 0; i <= 100; i++)
         ideas[i] = i;
 }
+
 Brain::Brain(Brain const &other)
 {
-    for (size_t i, i = 0, i <= 100, i++)
+    for (size_t i = 0; i <= 100; i++)
         ideas[i] = other.ideas[i];
 }
-Brain::Brain &operator=(Brain const &other)
+
+Brain& Brain::operator=(Brain const &other)
 {
     if (this != &other)
-        return (*this)
-    for (size_t i, i = 0, i <= 100, i++)
+        return (*this);
+    for (size_t i = 0; i <= 100; i++)
         ideas[i] = other.ideas[i];
     return (*this);
 }
