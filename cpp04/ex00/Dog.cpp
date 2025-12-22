@@ -2,9 +2,15 @@
 #include "Animal.hpp"
 #include <iostream>
 
-Dog::Dog( void ) :	Animal("Dog") {}
+Dog::Dog( void ) :	Animal("Dog")
+{
+	std::cout << "dog created" << std::endl;
+}
 
-Dog::Dog( Dog const &other ) :	Animal(other) {}
+Dog::Dog( Dog const &other ) :	Animal(other)
+{
+	std::cout << "dog copied" << std::endl;
+}
 
 Dog::~Dog( void )
 {

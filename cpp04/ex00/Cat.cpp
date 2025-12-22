@@ -2,9 +2,15 @@
 #include "Animal.hpp"
 #include <iostream>
 
-Cat::Cat( void ) :	Animal("Cat") {}
+Cat::Cat( void ) :	Animal("Cat")
+{
+	std::cout << "cat created" << std::endl;
+}
 
-Cat::Cat( Cat const &other ) : Animal(other) {}
+Cat::Cat( Cat const &other ) : Animal(other)
+{
+	std::cout << "cat copied" << std::endl;
+}
 
 Cat::~Cat(void)
 {

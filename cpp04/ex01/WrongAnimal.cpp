@@ -1,11 +1,20 @@
 #include "WrongAnimal.hpp"
 #include <iostream>
 
-WrongAnimal::WrongAnimal( void ) :	type("animal") {}
+WrongAnimal::WrongAnimal( void ) :	type("animal")
+{
+	std::cout << "wrong animal created" << std::endl;
+}
 
-WrongAnimal::WrongAnimal( std::string value ) :	type(value) {}
+WrongAnimal::WrongAnimal( std::string value ) :	type(value)
+{
+	std::cout << "wrong animal created with value" << std::endl;
+}
 
-WrongAnimal::WrongAnimal( WrongAnimal const &other ) :	type(other.type) {}
+WrongAnimal::WrongAnimal( WrongAnimal const &other ) :	type(other.type)
+{
+	std::cout << "wrong animal copied" << std::endl;
+}
 
 WrongAnimal::~WrongAnimal( void )
 {

@@ -1,11 +1,20 @@
 #include "Animal.hpp"
 #include <iostream>
 
-Animal::Animal( void ) :	_type("animal") {}
+Animal::Animal( void ) :	_type("animal")
+{
+	std::cout << "Animal construced" << std::endl;
+}
 
-Animal::Animal( std::string value ) :	_type(value) {}
+Animal::Animal( std::string value ) :	_type(value)
+{
+	std::cout << "Animal construced with value" << std::endl;
+}
 
-Animal::Animal( Animal const &other ) :	_type(other._type) {}
+Animal::Animal( Animal const &other ) :	_type(other._type)
+{
+	std::cout << "Animal copied" << std::endl;
+}
 
 Animal::~Animal( void )
 {

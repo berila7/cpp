@@ -6,11 +6,13 @@
 Cat::Cat( void ) :	Animal("Cat") 
 {
 	_catBrain = new Brain();
+	std::cout << "cat created" << std::endl;
 }
 
 Cat::Cat( Cat const &other ) : Animal(other)
 {
 	_catBrain = new Brain(*other._catBrain);
+	std::cout << "Cat copied" << std::endl;
 }
 
 Cat::~Cat(void)

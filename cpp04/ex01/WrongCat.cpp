@@ -2,9 +2,15 @@
 #include "WrongAnimal.hpp"
 #include <iostream>
 
-WrongCat::WrongCat( void ) :	WrongAnimal("WrongCat") {}
+WrongCat::WrongCat( void ) :	WrongAnimal("WrongCat")
+{
+	std::cout << "wrong cat created" << std::endl;
+}
 
-WrongCat::WrongCat( WrongCat const &other ) : WrongAnimal(other) {}
+WrongCat::WrongCat( WrongCat const &other ) : WrongAnimal(other)
+{
+	std::cout << "wrong cat copied" << std::endl;
+}
 
 WrongCat::~WrongCat(void)
 {

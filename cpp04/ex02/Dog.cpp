@@ -6,11 +6,13 @@
 Dog::Dog( void ) :	Animal("Dog")
 {
 	_dogBrain = new Brain();
+	std::cout << "dog created" << std::endl;
 }
 
 Dog::Dog( Dog const &other ) :	Animal(other)
 {
 	_dogBrain = new Brain(*other._dogBrain);
+	std::cout << "dog created" << std::endl;
 }
 
 Dog::~Dog( void )
