@@ -12,7 +12,7 @@ public:
 	WrongAnimal ( std::string value );
 	WrongAnimal( WrongAnimal const &other );
 	WrongAnimal &operator=( WrongAnimal const &other );
-	virtual ~WrongAnimal( void );
+	~WrongAnimal( void );
 
 	void	makeSound( void ) const;
 
