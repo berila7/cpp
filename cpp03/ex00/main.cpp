@@ -3,6 +3,7 @@
 int main( void )
 {
 	ClapTrap	first;
+	ClapTrap second = first;
 	first.attack("mohammed");
 	first.takeDamage(5);
 	first.beRepaired(3);
