@@ -7,6 +7,8 @@ class Animal
 {
 protected:
 	std::string _type;
+private:
+	std::string _test;
 public:
 	Animal( void );
 	Animal( std::string value );
