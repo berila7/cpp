@@ -28,7 +28,7 @@ private:
 	bool				_isSigned;
 	const int			_gradeToSign;
 	const int			_gradeToExecute;
-	std::string	_target;
+	const std::string	_target;
 
 public:
 	AForm(std::string const& name, int gradeToSign, int gradeToExecute, std::string const target);

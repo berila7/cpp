@@ -24,7 +24,8 @@ AForm::AForm(AForm const &other)
 	_name(other._name),
 	_isSigned(other._isSigned),
 	_gradeToSign(other._gradeToSign),
-	_gradeToExecute(other._gradeToExecute)
+	_gradeToExecute(other._gradeToExecute),
+	_target(other._target)
 {
 	std::cout << "Copy Constructor called" << std::endl;
 }
@@ -67,6 +68,11 @@ int	AForm::getGradeToSign() const
 	return (_gradeToSign);
 }
 
+std::string	AForm::getTarget() const
+{
+	return (_target);
+}
+
 int	AForm::getGradeToExecute() const
 {
 	return (_gradeToExecute);
@@ -78,6 +84,16 @@ void AForm::beSigned(Bureaucrat const& bureaucrat)
 		throw GradeTooLowException();
 	_isSigned = true;
 }
+
+void AForm::execute(Bureaucrat const& executor) const
+{
+	if (!_isSigned)
+		throw FormNotSignedException();
+	else if (executor.getGrade() > _gradeToExecute)
+		throw GradeTooLowException();
+	executeAction();
+}
+
 
 std::ostream& operator<<(std::ostream& out, AForm const& form)
 {
