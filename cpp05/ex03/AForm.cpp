@@ -95,7 +95,6 @@ void AForm::execute(Bureaucrat const& executor) const
 	executeAction();
 }
 
-
 std::ostream& operator<<(std::ostream& out, AForm const& form)
 {
     out << "Form " << form.getName() 

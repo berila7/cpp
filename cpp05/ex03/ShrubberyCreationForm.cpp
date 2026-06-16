@@ -36,7 +36,7 @@ void ShrubberyCreationForm::executeAction() const
 
     if (!myFile.is_open()) {
         std::cout << "Failed to open file!" << std::endl;
-		return; 
+		return;
     }
 	myFile	<< "   /\\\n"
 			<< "  /**\\\n"

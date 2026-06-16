@@ -2,8 +2,8 @@ NAME		=	program
 CXX			=	c++
 CXXFLAGS	=	-Wall -Wextra -Werror -std=c++98
 
-SRC			=	ShrubberyCreationForm.cpp RobotomyRequestForm.cpp PresidentialPardonForm.cpp Bureaucrat.cpp main.cpp AForm.cpp
-INC			=	ShrubberyCreationForm.hpp RobotomyRequestForm.hpp PresidentialPardonForm.hpp Bureaucrat.hpp AForm.hpp
+SRC			=	ShrubberyCreationForm.cpp RobotomyRequestForm.cpp PresidentialPardonForm.cpp Bureaucrat.cpp Intern.cpp main.cpp AForm.cpp
+INC			=	ShrubberyCreationForm.hpp RobotomyRequestForm.hpp PresidentialPardonForm.hpp Bureaucrat.hpp Intern.hpp AForm.hpp
 OBJ			=	${SRC:.cpp=.o}
 
 all: $(NAME)
