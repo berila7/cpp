@@ -31,8 +31,8 @@ private:
 	const std::string	_target;
 
 public:
+    AForm();
 	AForm(std::string const& name, int gradeToSign, int gradeToExecute, std::string const target);
-
 	AForm(AForm const& other);
 	AForm& operator=(AForm const& other);
 

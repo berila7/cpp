@@ -2,6 +2,17 @@
 #include "Bureaucrat.hpp"
 #include <iostream>
 
+AForm::AForm()
+	:
+	_name("default"),
+	_isSigned(false),
+	_gradeToSign(150),
+	_gradeToExecute(150),
+	_target("default")
+{
+	std::cout << "default constructor called" << std::endl;
+}
+
 AForm::AForm(std::string const& name, int gradeToSign, int gradeToExecute, std::string const target)
 	:
 	_name(name),

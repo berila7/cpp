@@ -2,6 +2,16 @@
 #include "Bureaucrat.hpp"
 #include <iostream>
 
+Form::Form()
+	:
+	_name("default"),
+	_isSigned(false),
+	_gradeToSign(150),
+	_gradeToExecute(150)
+{
+	std::cout << "default constructor called" << std::endl;
+}
+
 Form::Form(std::string const& name, int gradeToSign, int gradeToExecute)
 	:
 	_name(name),

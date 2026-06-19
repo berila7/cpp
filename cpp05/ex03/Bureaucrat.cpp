@@ -3,6 +3,14 @@
 #include <exception>
 #include <iostream>
 
+Bureaucrat::Bureaucrat()
+	:
+	_name("default"),
+	_grade(150)
+{
+	std::cout << "default constructor called" << std::endl;
+}
+
 Bureaucrat::Bureaucrat(std::string const& name, int grade)
 	: 
 	_name(name),

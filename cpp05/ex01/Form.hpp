@@ -24,8 +24,8 @@ private:
 	const int _gradeToExecute;
 
 public:
+	Form();
 	Form(std::string const& name, int gradeToSign, int gradeToExecute);
-
 	Form(Form const& other);
 	Form& operator=(Form const& other);
 
